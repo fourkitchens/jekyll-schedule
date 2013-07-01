@@ -1,0 +1,4 @@
+; some whitespace settings so we all get along
+[*]
+indent_style = tab
+indent_size = 2

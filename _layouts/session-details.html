@@ -1,0 +1,22 @@
+---
+layout: page
+---
+
+<article class="session session-details">
+  <h1>{{ page.title }}</h1>
+  <p class="meta">Presenters: {{ page.presenters }}</p>
+
+  <aside>
+    <p>Presented on {{ page.day }} at {{ page.start }} in {{ page.room }}</p>
+
+    <ul class="meta">
+      <li>Difficulty: {{ page.difficulty }}</li>
+      <li>Track: {{ page.track }}</li>
+      {% if page.slides != null %}
+        <li><a href="{{ page.slides }}">View slides</a></li>
+      {% endif %}
+    </ul>
+  </aside>
+
+  <div class="desc">{{ content }}</div>
+</article>

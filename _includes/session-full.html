@@ -1,0 +1,7 @@
+<section class="slot">
+	<h3 class="time">{{ post.date | date: "%I:%M%p" | downcase }}</h3>
+	<article class="full">
+		<h2>{{ post.title }}</h2>
+		{{ post.content }}
+	</article>
+</section>

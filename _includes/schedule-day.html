@@ -1,0 +1,16 @@
+{% if post.room == 'full' and post.accepted == true %}
+	{% include session-full.html %}
+{% elsif post.accepted == true %}
+	{% capture slot %}{% cycle 'begin', 'skip', 'end' %}{% endcapture %}
+	
+	{% if slot == 'begin' %}
+		<section class="slot">
+			<h3 class="time">{{ post.date | date: "%I:%M%p" | downcase }}</h3>
+	{% endif %}
+	
+	{% include session.html %}
+	
+	{% if slot == 'end' %}
+		</section>
+	{% endif %}
+{% endif %}

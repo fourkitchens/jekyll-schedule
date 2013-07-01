@@ -1,0 +1,28 @@
+//
+// resets
+//
+
+* {
+	-webkit-box-sizing: border-box;
+		 -moz-box-sizing: border-box;
+					box-sizing: border-box;
+}
+
+//
+// Grid system
+//
+// This is just a sample grid system included to make the schedule responsive
+// It can be totally ignored but if you use Sass it's one less thing to worry
+// about.
+//
+// @see https://github.com/Team-Sass/Singularity
+//
+
+@import 'breakpoint';
+@import 'singularitygs';
+
+//
+// Schedule layout
+//
+
+@import 'schedule';

@@ -1,0 +1,5 @@
+# Ignore Jekyll's _site folder. Let GitHub pages generate it.
+_site
+
+# Ignore Sass stuff
+.sass-cache

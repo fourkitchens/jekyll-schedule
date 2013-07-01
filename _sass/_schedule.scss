@@ -1,0 +1,72 @@
+/**
+ * Schedule layout
+ */
+
+//
+// Breakpoints
+// @see https://github.com/Team-Sass/Breakpoint
+//
+
+$breakpoint-to-ems: true;
+$sched-cols: 820px;
+
+//
+// Grid settings
+// @see https://github.com/Team-Sass/Singularity/wiki/Creating-Grids
+//
+
+$grids: 1;
+$gutters: 1/4;
+$grids: add-grid(2 3 3 3 at $sched-cols);
+
+//
+// Set up the layout
+//
+
+.schedule {
+
+	// By default everything is linear
+	section.day,
+	section.slot {
+		clear: both;
+	}
+
+	// Column layout when the screen is wide enough
+	@include breakpoint($sched-cols) {
+
+		// Time headings are in the first column
+		h3.time {
+			// 1 col starting at 1st col
+			@include grid-span(1,1);
+		}
+
+		// Individual time slots
+		//
+		// The values of these data attributes must match whatever you use in
+		// your individual posts. The templates will replace spaces with dashes,
+		// e.g. "Room 1" becomes "room-1"
+		[data-room="room-1"] {
+			// 1 col starting at 2nd col
+			@include grid-span(1,2);
+		}
+		[data-room="room-2"] {
+			// 1 col starting at 3rd col
+			@include grid-span(1,3);
+		}
+		[data-room="room-3"] {
+			// 1 col starting at 4th col
+			@include grid-span(1,4);
+		}
+
+		// Hide room in meta since columns are active
+		.session .meta .room {
+			display: none;
+		}
+
+		// Full-width time slots
+		.full {
+			// 3 cols starting at 2nd col
+			@include grid-span(3,2);
+		}
+	}
+}

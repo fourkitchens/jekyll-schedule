@@ -1,0 +1,16 @@
+<article class="session"
+				 data-room="{{ post.room | downcase | replace:' ','-' }}"
+				 data-track="{{ post.track | downcase | replace:' ','-' }}"
+				 data-difficulty="{{ post.difficulty | downcase | replace:' ','-' }}">
+
+	<h3><a href="{{ post.permalink }}">{{ post.title }}</a></h3>
+
+	{% if post.presenters != null %}
+		<p class="meta">
+			Presented
+			<span class="presenters">by {{ post.presenters }}</span>
+			<span class="room">in {{ post.room }}</span>
+		</p>
+	{% endif %}
+
+</article>
