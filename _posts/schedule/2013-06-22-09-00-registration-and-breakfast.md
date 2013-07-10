@@ -11,9 +11,7 @@ presenters:
 track:
 difficulty:
 
-day: Saturday
 date: 2013-06-22 9:00am
-start: 9:00am
 room: full
 ---
 
