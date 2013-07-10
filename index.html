@@ -17,9 +17,10 @@ title: Jekyll-powered Event Schedule
 		</header>
 
 		{% for post in site.categories.session reversed %}
-		{% if post.day == 'Saturday' %}
-			{% include schedule-day.html %}
-		{% endif %}
+			{% capture day %}{{ post.date | date: "%A" }}{% endcapture %}
+			{% if day == 'Saturday' %}
+				{% include schedule-day.html %}
+			{% endif %}
 		{% endfor %}
 
 	</section><!-- #satur.day -->
